@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
 /**
  * 
  */
@@ -75,10 +79,19 @@ public class Club {
 	 * @param year removes member at year provided
 	 */
 	public void removeMembersByYear(int year) {
-		for(int i = 0; i < 10; i++) {
-			if(this.members[i] != null && this.members[i].getYearJoined() == year) {
-				members[i] = null;
+		if (year <= Member.CURRENT_YEAR) {
+			ArrayList<Member> memberList = new ArrayList<Member>(
+					Arrays.asList(members));
+			Iterator<Member> it = memberList.iterator();
+			while (it.hasNext()) {
+				Member member = it.next();
+				if (member != null && member.getYearJoined() == year) {
+					it.remove();
+				}
 			}
+			this.members = memberList.toArray(new Member[10]);
+		} else {
+			System.out.println("The provided year higher then the current year.");
 		}
 	}
 }

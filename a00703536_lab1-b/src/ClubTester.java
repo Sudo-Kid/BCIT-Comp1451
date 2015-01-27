@@ -45,7 +45,6 @@ public class ClubTester {
 		club1.showMembers();
 		club1.numberOfMembers();
 		club1.showMembersByYear(2000);
-
 	}
 
 }
