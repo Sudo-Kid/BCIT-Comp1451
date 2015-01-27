@@ -22,10 +22,10 @@ public class Member {
 	 * 
 	 */
 	public Member() {
-		this.firstName = DEFAULT_NAME;
-		this.lastName = DEFAULT_NAME;
-		this.monthJoined = FIRST_MONTH;
-		this.yearJoined = CURRENT_YEAR;
+		setFirstName(DEFAULT_NAME);
+		setLastName(DEFAULT_NAME);
+		setMonthJoined(FIRST_MONTH);
+		setYearJoined(CURRENT_YEAR);
 	}
 
 	/**
