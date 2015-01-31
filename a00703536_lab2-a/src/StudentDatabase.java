@@ -40,7 +40,6 @@ public class StudentDatabase {
 		} else {
 			System.out.println("Your student name must not be null!");
 		}
-		
 	}
 	
 	/* (non-Javadoc)
