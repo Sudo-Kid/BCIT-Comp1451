@@ -8,24 +8,26 @@ import java.util.Iterator;
 
 /**
  * @author A00703536
- *
+ * @version 
  */
 public class Club {
+	public static final int ARRAYSIZE = 10;
+	
 	private Member[] members;
 	
 	public Club() {
-		this.members = new Member[10];
+		this.members = new Member[ARRAYSIZE];
 	}
 	
 	/**
 	 * @param member Used to add member to club
 	 */
 	public void join(Member member) {
-		for(int counter = 0; counter < 11; counter++) {
-			if(counter < 10 && members[counter] == null) {
-				members[counter] = member;
+		for(int counter = 0; counter < ARRAYSIZE + 1; counter++) {
+			if(this.members[counter] == null && counter < ARRAYSIZE) {
+				this.members[counter] = member;
 				break;
-			} else if (counter == 10){
+			} else if (counter == ARRAYSIZE){
 				System.out.println("Your club is full.");
 				break;
 			}
@@ -37,7 +39,7 @@ public class Club {
 	 */
 	public int numberOfMembers() {
 		int counter = 0;
-		for(Member member: members){
+		for(Member member: this.members){
 			if(member != null) {
 				counter++;
 			}
@@ -89,7 +91,7 @@ public class Club {
 					it.remove();
 				}
 			}
-			this.members = memberList.toArray(new Member[10]);
+			this.members = memberList.toArray(new Member[ARRAYSIZE]);
 		} else {
 			System.out.println("The provided year higher then the current year.");
 		}

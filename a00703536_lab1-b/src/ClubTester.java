@@ -38,6 +38,8 @@ public class ClubTester {
 		club1.join(member10);
 		club1.join(member11);
 		
+		
+		
 		System.out.println(club1.numberOfMembers());
 		club1.removeMembersByYear(2000);
 		club1.showMembers();
